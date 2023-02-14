@@ -1,6 +1,21 @@
+spring:
+  application:
+    name: discovery-service
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER_HOST}:${CONFIG_SERVER_PORT}
+  cloud:
+    vault:
+      generic:
+        enabled: true
+        profile-separator: '/'
+        default-context: discovery-service
 server:
   port: 8761
 eureka:
+  login: ${eureka.login}
+  password: ${eureka.password}
+  instance:
+    prefer-ip-address: true
   client:
     fetch-registry: false
     register-with-eureka: false

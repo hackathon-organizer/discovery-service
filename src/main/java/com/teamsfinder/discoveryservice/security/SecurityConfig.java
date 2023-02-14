@@ -1,5 +1,7 @@
 package com.teamsfinder.discoveryservice.security;
 
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -16,6 +18,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 class SecurityConfig {
+
+    @Value("${eureka.login}")
+    private String eurekaLogin;
+
+    @Value("${eureka.password}")
+    private String eurekaPassword;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -34,8 +42,8 @@ class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails userDetails = User.builder()
-                .username("eureka")
-                .password(passwordEncoder().encode("password"))
+                .username(eurekaLogin)
+                .password(passwordEncoder().encode(eurekaPassword))
                 .roles("USER")
                 .build();
         return new InMemoryUserDetailsManager(userDetails);
