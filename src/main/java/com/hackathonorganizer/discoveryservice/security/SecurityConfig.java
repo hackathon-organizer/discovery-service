@@ -1,10 +1,8 @@
-package com.teamsfinder.discoveryservice.security;
-
+package com.hackathonorganizer.discoveryservice.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -19,10 +17,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 class SecurityConfig {
 
-    @Value("${eureka.login}")
+    @Value("${EUREKA_LOGIN}")
     private String eurekaLogin;
 
-    @Value("${eureka.password}")
+    @Value("${EUREKA_PASSWORD}")
     private String eurekaPassword;
 
     @Bean

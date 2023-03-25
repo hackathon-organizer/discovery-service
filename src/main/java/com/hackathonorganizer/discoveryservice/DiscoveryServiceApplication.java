@@ -1,4 +1,4 @@
-package com.teamsfinder.discoveryservice;
+package com.hackathonorganizer.discoveryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
