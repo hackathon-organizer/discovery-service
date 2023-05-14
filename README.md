@@ -1,6 +1,6 @@
 # Hackathon Organizer DISCOVERY-SERVICE
 
-Discovery service used for the purpose of discovery project services. Build with [Netflix Eureka](https://github.com/Netflix/eureka).
+Used for the purpose of discovery project services. Build with [Netflix Eureka](https://github.com/Netflix/eureka).
 
 # Live demo
 
